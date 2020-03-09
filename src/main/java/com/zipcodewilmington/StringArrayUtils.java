@@ -76,28 +76,18 @@ public class StringArrayUtils {
      */ // TODO
     public static boolean isPalindromic(String[] array) {
 
-        String[] array1;
-        int i=0;
-        int j = array.length-1;
-        int c=0;
-
-        List<String> list= Arrays.asList(array);
-        Collections.reverse(list);
-        array1 = list.toArray(array);
+        int i=0, c=0, j = array.length-1;
 
         for (i=0; i<array.length-1; i++) {
-            if (array[i] == array1[j]) {
+            if (array[i] == array[j]) {
                 c++;
                 j--;
 
             }
         }
 
-        if (c==array.length-1)
-            {
-            return true; }
-        else
-            return false;
+        return  (c==array.length-1);
+
     }
 
     /**
@@ -118,7 +108,6 @@ public class StringArrayUtils {
         str = strbfr.toString().toLowerCase();
 
         for (int i = 0; i < 26; i++) {
-
             if (str.contains(String.valueOf(ab.charAt(i)))) {
                 count++;
             }
@@ -157,9 +146,8 @@ public class StringArrayUtils {
 
         List<String> list = new ArrayList<String> (Arrays.asList(array));
         list.remove(valueToRemove);
-        array = list.toArray(new String[0]);
+        return list.toArray(new String[0]);
 
-        return array;
     }
 
     /**
@@ -169,19 +157,12 @@ public class StringArrayUtils {
     public static String[] removeConsecutiveDuplicates(String[] array) {
 
         ArrayList<String> list=new ArrayList<String>();
-
         for(int i=0;i<array.length;i++) {
-
-            if (i + 1 < array.length && (array[i].equals(array[i+1]))) {
-
-            } else {
-
+            if (!(i + 1 < array.length && (array[i].equals(array[i+1])))) {
                 list.add(array[i]);
             }
         }
-        String array1[]= list.toArray(new String[list.size()]);
-
-        return array1;
+        return list.toArray(new String[0]);
     }
 
     /**
