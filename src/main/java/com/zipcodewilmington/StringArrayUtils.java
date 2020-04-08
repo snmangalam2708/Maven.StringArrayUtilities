@@ -1,10 +1,10 @@
 package com.zipcodewilmington;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
 
 
 /**
@@ -60,14 +60,10 @@ public class StringArrayUtils {
      */ // TODO
     public static String[] reverse(String[] array) {
 
-
-        String[] array1;
-
         List<String> list= Arrays.asList(array);
         Collections.reverse(list);
-        array1 = list.toArray(array);
+        return list.toArray(array);
 
-        return array1;
     }
 
     /**
